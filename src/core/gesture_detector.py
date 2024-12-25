@@ -9,34 +9,37 @@ class GestureDetector:
         
         # Gesture detection thresholds
         self.gesture_thresholds = {
-            'swipe_horizontal': 0.15,  # 15% of frame width
-            'swipe_vertical': 0.15,    # 15% of frame height
             'pinch': 0.08,             # Distance between thumb and index for pinch
-            'spread': 0.15             # Distance between thumb and index for spread
+            'spread': 0.15,            # Distance between thumb and index for spread
+            'position': 0.2            # Position threshold for navigation
         }
         
-        # Minimum change in distance to trigger pinch/spread
+        # Screen regions for position-based detection
+        self.regions = {
+            'left': 0.3,    # Left 30% of screen
+            'right': 0.7,   # Right 70% of screen
+            'top': 0.3,     # Top 30% of screen
+            'bottom': 0.7   # Bottom 70% of screen
+        }
+        
         self.min_distance_change = 0.02
+        self.pointing_threshold = 0.1  # Threshold for detecting pointing gesture
 
     def update(self, landmarks: List) -> Optional[str]:
         """
         Update landmarks and detect gestures
         Returns: detected gesture or None
         """
-        # Handle case when no landmarks are detected
         if not landmarks:
             self.previous_landmarks = None
             self.last_pinch_distance = None
             return None
             
-        # If we have multiple hands, use the first one
         current = landmarks[0] if isinstance(landmarks[0], list) else landmarks
         
-        # Store current landmarks
         self.previous_landmarks = self.current_landmarks
         self.current_landmarks = current
         
-        # Detect gestures
         return self.detect_gesture()
 
     def detect_gesture(self) -> Optional[str]:
@@ -46,17 +49,18 @@ class GestureDetector:
         try:
             current = self.current_landmarks
             
-            if not current or len(current) < 21:  # Ensure we have all landmarks
+            if not current or len(current) < 21:
                 return None
             
-            # Check for pinch/spread gestures first
+            # First check for pinch/spread gestures
             pinch_gesture = self._detect_pinch_spread(current)
             if pinch_gesture:
                 return pinch_gesture
             
-            # If no pinch/spread, check for swipes
-            if self.previous_landmarks:
-                return self._detect_swipe(current, self.previous_landmarks)
+            # If no pinch/spread, check for pointing gestures
+            pointing_gesture = self._detect_pointing(current)
+            if pointing_gesture:
+                return pointing_gesture
             
             return None
             
@@ -71,58 +75,95 @@ class GestureDetector:
         """
         try:
             # Get thumb and index finger positions
-            thumb_tip = np.array(current[4][:2])
-            index_tip = np.array(current[8][:2])
+            thumb_tip = np.array(current[4][:2])  # Thumb tip
+            index_tip = np.array(current[8][:2])  # Index finger tip
+            thumb_mcp = np.array(current[2][:2])  # Thumb base
+            index_mcp = np.array(current[5][:2])  # Index finger base
             
-            # Calculate current distance
+            # Calculate distances
             current_distance = np.linalg.norm(thumb_tip - index_tip)
+            base_distance = np.linalg.norm(thumb_mcp - index_mcp)
+            
+            # Normalize distance by base distance
+            normalized_distance = current_distance / base_distance
             
             # Initialize last_pinch_distance if None
             if self.last_pinch_distance is None:
-                self.last_pinch_distance = current_distance
+                self.last_pinch_distance = normalized_distance
                 return None
             
             # Calculate distance change
-            distance_change = current_distance - self.last_pinch_distance
+            distance_change = normalized_distance - self.last_pinch_distance
             
             # Update last distance
-            self.last_pinch_distance = current_distance
+            self.last_pinch_distance = normalized_distance
             
             # Debug print
-            print(f"Distance: {current_distance:.3f}, Change: {distance_change:.3f}")
+            print(f"Normalized distance: {normalized_distance:.3f}, Change: {distance_change:.3f}")
             
-            # Detect gesture based on distance and change
+            # Detect gesture based on normalized distance and change
             if abs(distance_change) > self.min_distance_change:
-                if current_distance < self.gesture_thresholds['pinch']:
+                if normalized_distance < 0.5:  # Adjusted threshold
                     return 'pinch'
-                elif current_distance > self.gesture_thresholds['spread']:
+                elif normalized_distance > 1.2:  # Adjusted threshold
                     return 'spread'
             
             return None
             
-        except (IndexError, TypeError):
+        except (IndexError, TypeError) as e:
+            print(f"Error in pinch detection: {e}")
             self.last_pinch_distance = None
             return None
 
-    def _detect_swipe(self, current: List, previous: List) -> Optional[str]:
-        """Detect swipe gestures"""
+    def _detect_pointing(self, current: List) -> Optional[str]:
+        """
+        Detect pointing gesture and direction
+        Uses index finger position and orientation
+        """
         try:
-            # Use index finger tip for swipe detection
-            dx = current[8][0] - previous[8][0]  # X movement
-            dy = current[8][1] - previous[8][1]  # Y movement
+            # Get index finger points
+            index_tip = current[8]    # Index finger tip
+            index_pip = current[6]    # Index finger middle joint
             
-            # Check horizontal swipe
-            if abs(dx) > self.gesture_thresholds['swipe_horizontal']:
-                return 'swipe_right' if dx > 0 else 'swipe_left'
-            
-            # Check vertical swipe
-            if abs(dy) > self.gesture_thresholds['swipe_vertical']:
-                return 'swipe_up' if dy < 0 else 'swipe_down'
+            # Check if index finger is extended (pointing)
+            if self._is_finger_extended(current):
+                # Get position in frame
+                x, y = index_tip[0], index_tip[1]
+                
+                # Determine direction based on position in frame
+                if x < self.regions['left']:
+                    return 'nav_left'
+                elif x > self.regions['right']:
+                    return 'nav_right'
+                elif y < self.regions['top']:
+                    return 'nav_up'
+                elif y > self.regions['bottom']:
+                    return 'nav_down'
             
             return None
             
         except (IndexError, TypeError):
             return None
+
+    def _is_finger_extended(self, landmarks: List) -> bool:
+        """
+        Check if index finger is extended (pointing)
+        """
+        try:
+            # Get relevant finger joints
+            mcp = np.array(landmarks[5][:2])  # Base of index finger
+            pip = np.array(landmarks[6][:2])  # First joint
+            tip = np.array(landmarks[8][:2])  # Finger tip
+            
+            # Calculate distances
+            mcp_pip_dist = np.linalg.norm(pip - mcp)
+            pip_tip_dist = np.linalg.norm(tip - pip)
+            
+            # Finger is extended if tip is further from base than middle joint
+            return pip_tip_dist > mcp_pip_dist
+            
+        except (IndexError, TypeError):
+            return False
 
     def update_thresholds(self, new_thresholds: dict):
         """Update gesture detection thresholds"""

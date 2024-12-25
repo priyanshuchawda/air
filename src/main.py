@@ -16,7 +16,7 @@ def main():
     config_manager = ConfigManager()
     
     # Initialize components with configuration
-    command_mapper = CommandMapper(config_manager.gesture_mappings_file)
+    command_mapper = CommandMapper()
     window = MainWindow(command_mapper)
     window.config_manager = config_manager
     
@@ -48,22 +48,34 @@ def main():
             
             # Process frame
             frame, landmarks = hand_tracker.find_hands(frame)
-            gesture = gesture_detector.update(landmarks)
             
-            if gesture:
-                window.update_status(f"Gesture: {gesture} (FPS: {optimizer.get_fps():.1f})")
-                command_mapper.execute_command(gesture)
+            # Update status based on mode
+            status_text = ""
+            if command_mapper.painting_mode:
+                status_text = "Paint Mode - Pinch to draw"
+            else:
+                # Normal gesture detection mode
+                gesture = gesture_detector.update(landmarks)
+                if gesture:
+                    status_text = f"Gesture: {gesture}"
+                    command_mapper.execute_command(gesture, landmarks)
             
-            # Update GUI with the new frame
+            # Add FPS if there's a status
+            if status_text:
+                status_text = f"{status_text} | FPS: {optimizer.get_fps():.1f}"
+            else:
+                status_text = f"FPS: {optimizer.get_fps():.1f}"
+            
+            # Update status and frame
+            window.status_label.setText(status_text)
             window.set_frame(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-            window.update_frame()
 
     # Connect timer to frame processing
     window.timer.timeout.connect(process_frame)
     
     # Show window and start application
     window.show()
-    sys.exit(app.exec_())
+    return app.exec_()
 
 if __name__ == "__main__":
-    main() 
+    sys.exit(main()) 
