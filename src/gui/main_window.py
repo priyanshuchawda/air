@@ -3,9 +3,9 @@ from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QImage, QPixmap
 import cv2
-from .settings_dialog import SettingsDialog
-from utils.visualizer import GestureVisualizer
-from .config_dialog import ConfigDialog
+from src.gui.settings_dialog import SettingsDialog
+from src.utils.visualizer import GestureVisualizer
+from src.gui.config_dialog import ConfigDialog
  
 class MainWindow(QMainWindow):
     def __init__(self, command_mapper):
@@ -35,9 +35,11 @@ class MainWindow(QMainWindow):
         self.video_label.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(self.video_label)
 
-        # Create status bar
+        # Create status bar with fixed width
         self.status_label = QLabel("No gesture detected")
         self.status_label.setAlignment(Qt.AlignCenter)
+        self.status_label.setMinimumWidth(300)  # Set minimum width
+        self.status_label.setMaximumWidth(500)  # Set maximum width
         main_layout.addWidget(self.status_label)
 
         # Setup video timer
@@ -111,6 +113,12 @@ class MainWindow(QMainWindow):
         self.gesture_name_input = QLineEdit()
         self.gesture_name_input.setPlaceholderText("Enter gesture name")
         control_layout.addWidget(self.gesture_name_input)
+        
+        # Add paint mode toggle button
+        self.paint_mode_button = QPushButton("Paint Mode")
+        self.paint_mode_button.setCheckable(True)
+        self.paint_mode_button.clicked.connect(self.toggle_paint_mode)
+        control_layout.addWidget(self.paint_mode_button)
         
         return control_layout
 
@@ -217,3 +225,9 @@ class MainWindow(QMainWindow):
             # Update display
             self.video_label.setPixmap(scaled_pixmap)
             self.video_label.setAlignment(Qt.AlignCenter) 
+
+    def toggle_paint_mode(self):
+        """Toggle paint mode"""
+        is_painting = self.command_mapper.toggle_painting_mode()
+        self.paint_mode_button.setText("Exit Paint Mode" if is_painting else "Paint Mode")
+        self.status_label.setText("Paint Mode: " + ("On" if is_painting else "Off")) 
