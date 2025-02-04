@@ -1,0 +1,124 @@
+2025-01-27 19:05:08,729 - __main__ - INFO - Starting AirTouch application
+2025-01-27 19:05:08,841 - src.config.config_manager - INFO - Loaded settings from C:\Users\r58fa\OneDrive\Desktop\priyanshuchawda\airtouch\config\settings.json
+2025-01-27 19:05:08,843 - src.config.config_manager - INFO - Loaded gesture mappings from C:\Users\r58fa\OneDrive\Desktop\priyanshuchawda\airtouch\config\gesture_mappings.json
+2025-01-27 19:05:08,843 - __main__ - INFO - Configuration loaded successfully
+2025-01-27 19:05:08,886 - src.core.gesture_detector - INFO - Updated gesture thresholds
+2025-01-27 19:05:08,886 - __main__ - INFO - Components initialized successfully
+2025-01-27 19:05:09,017 - __main__ - INFO - Main window created
+2025-01-27 19:05:14,120 - __main__ - INFO - Camera setup complete
+2025-01-27 19:05:14,120 - src.utils.optimizer - INFO - Performance optimizer started
+2025-01-27 19:05:14,120 - __main__ - INFO - Optimizer configured and started
+2025-01-27 19:05:15,599 - __main__ - INFO - Application window displayed
+2025-01-27 19:05:16,528 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 1.00, Skip: 1
+2025-01-27 19:05:16,914 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 1.00, Skip: 2
+2025-01-27 19:05:17,331 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.85, Skip: 2
+2025-01-27 19:05:17,982 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.70, Skip: 2
+2025-01-27 19:05:18,562 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.55, Skip: 2
+2025-01-27 19:05:19,220 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:19,811 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:20,597 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:21,590 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:22,608 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:23,669 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:24,715 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:25,752 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:26,850 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:28,131 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:29,293 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:30,313 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:31,457 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:32,756 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:34,854 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:36,561 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:37,779 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:39,012 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:40,437 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:41,725 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:43,771 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:45,841 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:47,487 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:48,769 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:50,230 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:51,717 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:53,049 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:54,463 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:55,765 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:56,951 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:58,075 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:59,120 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:05:59,973 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:01,147 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:02,483 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:03,870 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:04,960 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:05,928 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:06,850 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:07,543 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:06:08,548 - __main__ - INFO - Application shutdown complete
+2025-01-27 19:09:18,299 - src.main - INFO - Starting AirTouch application
+2025-01-27 19:09:18,322 - src.config.config_manager - INFO - Loaded settings from C:\Users\r58fa\OneDrive\Desktop\priyanshuchawda\airtouch\config\settings.json
+2025-01-27 19:09:18,322 - src.config.config_manager - INFO - Loaded gesture mappings from C:\Users\r58fa\OneDrive\Desktop\priyanshuchawda\airtouch\config\gesture_mappings.json
+2025-01-27 19:09:18,322 - src.main - INFO - Configuration loaded successfully
+2025-01-27 19:09:18,337 - src.core.gesture_detector - INFO - Updated gesture thresholds
+2025-01-27 19:09:18,343 - src.main - INFO - Components initialized successfully
+2025-01-27 19:09:18,373 - src.main - INFO - Main window created
+2025-01-27 19:09:23,298 - src.main - INFO - Camera setup complete
+2025-01-27 19:09:23,299 - src.utils.optimizer - INFO - Performance optimizer started
+2025-01-27 19:09:23,299 - src.main - INFO - Optimizer configured and started
+2025-01-27 19:09:24,016 - src.main - INFO - Application window displayed
+2025-01-27 19:09:24,901 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 1.00, Skip: 1
+2025-01-27 19:09:25,272 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 1.00, Skip: 2
+2025-01-27 19:09:25,963 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.85, Skip: 2
+2025-01-27 19:09:26,676 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.70, Skip: 2
+2025-01-27 19:09:27,282 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.55, Skip: 2
+2025-01-27 19:09:27,887 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:28,624 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:29,460 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:30,213 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:30,946 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:31,918 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:32,987 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:33,971 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:34,949 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:36,069 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:37,009 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:38,092 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:39,132 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:40,212 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:41,205 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:42,294 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:45,067 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:46,108 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:47,054 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:48,120 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:49,210 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:50,287 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:51,220 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:52,195 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:53,596 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:54,683 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:56,134 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:57,580 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:09:59,740 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:10:02,959 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:10:06,166 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:10:09,310 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:10:10,257 - src.utils.optimizer - DEBUG - Decreased quality - Scale: 0.40, Skip: 2
+2025-01-27 19:10:11,125 - src.main - INFO - Application shutdown complete
+2025-01-27 19:14:29,422 - src.main - DEBUG - Application logging initialized
+2025-01-27 19:14:29,422 - src.main - INFO - Starting AirTouch application...
+2025-01-27 19:14:29,446 - src.main - DEBUG - QApplication initialized
+2025-01-27 19:14:29,451 - src.main - INFO - Configuration loaded successfully
+2025-01-27 19:14:29,452 - src.main - DEBUG - Initializing core components...
+2025-01-27 19:14:29,452 - src.main - DEBUG - CommandMapper initialized
+2025-01-27 19:14:29,475 - src.main - DEBUG - HandTracker initialized
+2025-01-27 19:14:29,477 - src.main - DEBUG - GestureDetector initialized
+2025-01-27 19:14:29,477 - src.main - DEBUG - PerformanceOptimizer initialized
+2025-01-27 19:14:29,477 - src.main - INFO - Components initialized successfully
+2025-01-27 19:14:29,510 - src.main - INFO - Main window created
+2025-01-27 19:14:29,512 - src.main - DEBUG - Setting up camera...
+2025-01-27 19:14:34,355 - src.main - DEBUG - Camera setup complete
+2025-01-27 19:14:34,358 - src.main - INFO - Camera setup complete
+2025-01-27 19:14:34,358 - src.main - INFO - Optimizer configured and started
+2025-01-27 19:14:34,981 - src.main - INFO - Application window displayed
+2025-01-27 19:14:47,180 - src.main - INFO - Application shutdown complete

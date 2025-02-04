@@ -1,8 +1,11 @@
 {
     "swipe_left": "previous_page",
     "swipe_right": "next_page",
+    "swipe_up": "scroll_up",
+    "swipe_down": "scroll_down",
     "pinch": "zoom_out",
+    "pinch_hold": "continuous_zoom_out",
     "spread": "zoom_in",
     "rotate_clockwise": "rotate_right",
     "rotate_counterclockwise": "rotate_left"
-} 
+}

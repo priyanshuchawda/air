@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTabWidget,
                             QLabel, QSpinBox, QDoubleSpinBox, QCheckBox,
-                            QPushButton, QComboBox, QGroupBox, QFormLayout)
+                            QPushButton, QComboBox, QGroupBox, QFormLayout,
+                            QWidget)
 from PyQt5.QtCore import Qt
 
 class ConfigDialog(QDialog):
@@ -161,4 +162,4 @@ class ConfigDialog(QDialog):
     def save_and_close(self):
         """Save changes and close dialog"""
         self.apply_changes()
-        self.accept() 
+        self.accept()

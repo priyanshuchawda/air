@@ -1,0 +1,12 @@
+version: 1.2
+video:
+  source: 0
+  fps: 30
+  resolution: [1280, 720]
+ui:
+  theme: dark
+  show_landmarks: true
+  gesture_history_size: 20
+accessibility:
+  high_contrast: false
+  screen_reader: true

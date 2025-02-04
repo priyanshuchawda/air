@@ -1,0 +1,30 @@
+{
+    "camera": {
+        "device_id": 0,
+        "width": 1280,
+        "height": 720,
+        "fps": 30
+    },
+    "gestures": {
+        "swipe_threshold": 0.3,
+        "pinch_threshold": 0.15,
+        "rotation_threshold": 30,
+        "min_distance_change": 0.02,
+        "pointing_threshold": 0.1,
+        "pinch_hold_frames": 5
+    },
+    "performance": {
+        "target_fps": 30,
+        "min_detection_confidence": 0.7,
+        "min_tracking_confidence": 0.5,
+        "enable_gpu": false,
+        "frame_scale": 1.0
+    },
+    "interface": {
+        "show_landmarks": true,
+        "show_gesture_path": true,
+        "window_width": 1200,
+        "window_height": 900,
+        "debug_mode": true
+    }
+}
